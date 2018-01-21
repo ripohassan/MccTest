@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.provider.ContactsContract.*;
 
 public class MainActivity extends AppCompatActivity {
     private DBHelper mydb ;
@@ -74,12 +77,15 @@ public class MainActivity extends AppCompatActivity {
                 editTextphone.setText((CharSequence)phon);
                 editTextphone.setFocusable(false);
                 editTextphone.setClickable(false);
-
-                image. = BitmapFactory.decodeStream();
-                imageView.setImageBitmap(bmp)();
-
             }
         }
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Contacts.Photo);
+                startActivity(intent);
+            }
+        });
     }
 
         }
